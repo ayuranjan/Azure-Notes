@@ -1,0 +1,166 @@
+IoT(Internet of Things )
+- Is network of connected devices that sends data to and recieve instruction from a  centralised computer system .All these info are transmitted by the internet 
+- IoT devices collect data from embedded sensors  
+- By using Azure IoT services, devices that are equipped with these kinds of sensors and that can connect to the internet could send their sensor readings to a specific endpoint in Azure via a message. The message's data is then collected and aggregated, and it can be converted into reports and alerts. Alternately, all devices could be updated with new firmware to fix issues or add new functionality by sending software updates from Azure IoT services to each device.
+
+Azure IoT Hub 
+- Azure IoT Hub is a managed service that's hosted in the cloud and that acts as a central message hub for bi-directional communication between your IoT application and the devices it manages.
+- When you need to send data from iot devices but don't need future reporting features we use Iot Hub
+- From a cloud-to-device perspective, IoT Hub allows for command and control. That is, you can have either manual or automated remote control of connected devices
+-paas
+
+Azure IoT Central 
+- Azure IoT Central builds on top of IoT Hub by adding a dashboard that allows you to connect, monitor, and manage your IoT devices.
+- The UI makes it easy to quickly connect new devices and watch as they begin sending telemetry or error messages. You can watch the overall performance across all devices in aggregate, and you can set up alerts that send notifications when a specific device needs maintenance. Finally, you can push firmware updates to the device.
+- You can use the UI to control your devices remotely
+- A key part of IoT Central is the use of device templates. By using a device template, you can connect a device without any service-side coding
+-If you want a dashboard to control , monitor and report Iot devices we use IoT Central 
+- saas
+
+Azure Sphere 
+- Azure Sphere creates an end-to-end, highly secure IoT solution for customers that encompasses everything from the hardware and operating system on the device to the secure method of sending messages from the device to the message hub
+- Azure Sphere comes in three parts:
+	1. The first part is the Azure Sphere micro-controller unit (MCU), which is responsible for processing the operating system and signals from attached sensors. 
+	2. The second part is a customized Linux operating system (OS) that handles communication with 	   the security service and can run the vendor's software.
+	3. The third part is Azure Sphere Security Service, also known as AS3. Its job is to make sure 	   that the device has not been maliciously compromised. After the Azure Sphere system has 	   validated the authenticity of the device and authenticated it, the device can interact with 	   	   other Azure IoT services by sending telemetry and error information.
+- When security is we use Azure Sphere .Azure Sphere has a monitoring dashboard ,messaging hub and securiy 
+
+AI Service
+
+- . A goal of AI is to create a software system that's able to adapt, or learn something on its own without being explicitly programmed to do it.
+
+Azure Machine Learning 
+-paas
+- It is a platform for making predictions.
+-  It consists of tools and services that allow you to connect to data to train and test models to find one that will most accurately predict a future result. 
+- Choose Azure Machine Learning when your data scientists need complete control over the design and training of an algorithm using your own data. 
+- Use Azure Machine Learning for maximum flexibility
+- Machine learning Workspace - top level resource .. Machine learning studio - web portal for end to end development 
+
+Azure Cognitive Services 
+- It provides prebuilt machine learning models that enable applications to see, hear, speak, understand, and even begin to reason
+- Use Azure Cognitive Services to solve general problems, such as analyzing text for emotional sentiment or analyzing images to recognize objects or face
+- While Azure Machine Learning requires you to bring your own data and train models over that data, Azure Cognitive Services, for the most part, provides pretrained models so that you can bring in your live data to get predictions on.
+-  You can use Personalizer to predict their behavior and provide relevant experiences as it identifies usage patterns
+
+Azure Bot Service
+- Azure Bot Service and Bot Framework are platforms for creating virtual agents that understand and reply to questions just like a human
+-  Users converse with a bot by using text, interactive cards, and speech
+
+
+Serverless Computing 
+-  cloud-hosted execution environment that runs your code 
+- The term serverless computing is a misnomer. After all, there is a server (or a group of servers) that executes your code or desired functionality.
+- The cloud vendor takes care of all maintenance and scaling concerns for you
+- Serverless computing is ordinarily used to handle back-end scenario
+
+ Azure Functions service
+- with this  you can host a single method or function by using a popular programming language in the cloud that runs in response to an even
+- An Azure function is a stateless environment. A function behaves as if it's restarted every time it responds to an event. This feature is ideal for processing incoming data. And if state is required, the function can be connected to an Azure storage account.
+- - We can use existed code in any language in this 
+
+Logic Apps 
+- It is a low-code/no-code development platform hosted as a cloud service. we use worflows .
+- The service helps you automate and orchestrate tasks, business processes, and workflows when you need to integrate apps, data, systems, and services across enterprises or organizations
+- eAzure Logic Apps is a low-code/no-code service, no developers are needed. A cloud or IT professional should be able to build and support this workflow.
+-pass
+
+Event Grid 
+- event routing service in azure 
+- Routing of messages to correct location 
+
+
+
+- You can call Azure Functions from Azure Logic Apps, and vice versa.  
+- It's possible to create the same workflow by using Azure Functions, but it might take a considerable amount of time to research which APIs to call and how to call them. Azure Logic Apps has already componentized these API calls so that you supply only a few details and the details of calling the necessary APIs is abstracted away.
+
+
+Tools 
+-  Microsoft has created a comprehensive set of tools that help organizations implement DevOps practices, develop solutions, and save money while doing so
+- At a high level, there are three primary offerings, each of which is aimed at a specific audience and use case, that provide a diverse set of tools, services, programmatic APIs, and more.
+
+Azure DevOps Services 
+- It is a suite of services that address every stage of the software development lifecycle.
+	- Azure Repos is a centralized source-code repository 
+	- Azure Boards is an agile project management suite that allow you to assign tasks to a user.
+	- Azure Pipelines is a CI/CD pipeline automation tool for automated deploy or build for your code in multiple environment .
+	- Azure Artifacts is a repository for hosting artifacts, such as compiled source code or sharing some package with the team
+	- Azure Test Plans is an automated test tool
+- Sofisticated Project Management and Reporting -- main 
+
+Azure DevTest Labs 
+- It provides an automated means of managing the process of building, setting up, and tearing down virtual machines (VMs) that contain builds of your software projects. This way, developers and testers can perform tests across a variety of environments and builds
+-Suppose you need to test a new feature on an old version of an operating system. Azure DevTest Labs can set up everything automatically upon request.
+-paas ,sandbox environment 
+
+
+Github and Github Actions
+- Git is a decentralized source-code management tool, and GitHub is a hosted version of Git
+-  GitHub Actions enables workflow automation with triggers for many lifecycle events. One such example would be automating a CI/CD toolchain.A toolchain is a combination of software tools that aid in the delivery, development, and management of software applications throughout a system's development lifecycle
+- GitHub is a lighter-weight tool than Azure DevOps, with a focus on individual developers contributing to the open-source code. Azure DevOps, on the other hand, is more focused on enterprise development, with heavier project-management and planning tools, and finer-grained access control.
+
+
+
+-GitHub works on a simple model of read/write permissions to every feature. Meanwhile, Azure DevOps has a much more granular set of permissions that allow organizations to refine who is able to perform most operations across the entire toolset.
+
+Azure management tools
+
+- At a high level, there are two broad categories of management tools: visual tools and code-based tools.
+- Visual tools provide full, visually friendly access to all the functionality of Azure. However, visual tools might be less useful when you're trying to set up a large deployment of resources with interdependencies and configuration options.
+
+
+- approach to managing hardware and cloud resources, which developers use when they write application code, is referred to as infrastructure as code.
+-There are two approaches to infrastructure as code: imperative code and declarative code. Imperative code details each individual step that should be performed to achieve a desired outcome. By contrast, declarative code details only a desired outcome, and it allows an interpreter to decide how to best achieve that outcome
+
+The Azure portal
+- a web-based user interface, you can access virtually every feature of Azure.Used in simple task not for automation .
+
+The Azure mobile app
+-provides iOS and Android access to your Azure resources when you're away from your computer
+
+Azure PowerShell 
+-designed for automation 
+- It is a shell with which developers and DevOps and IT professionals can execute commands called cmdlets
+- Capturing the commands in a script makes the process repeatable and automatable.
+-Azure PowerShell is available for Windows, Linux, and Mac, and you can access it in a web browser via Azure Cloud Shell.
+- for windows background 
+
+ Azure CLI 
+- professional can execute commands in Bash
+- the Azure CLI is almost identical to Azure PowerShell in what you can do with it.  The primary difference is the syntax you use
+- more linux background 
+
+Azure Cloud Shell 
+- cloud based terminal ( on top right corner of portal) 
+- supports both Powershell and CLI 
+- multiple client interface eg -vs code extension , mobile apps , windows terminal ,etc 
+
+ARM templates
+- By using Azure Resource Manager templates (ARM templates), you can describe the resources you want to use in a declarative JSON format
+- The benefit is that the entire ARM template is verified before any code is executed to ensure that the resources will be created and connected correctly
+- Ultimately, the developer, DevOps professional, or IT professional needs only to define the desired state and configuration of each resource in the ARM template, and the template does the rest. Templates can even execute PowerShell and Bash scripts before or after the resource has been set up.
+-ARM templates define your application's infrastructure requirements for a repeatable deployment that is done in a consistent manner
+
+- for one-off/one time  scenarios, you may prefer more agile tools like PowerShell, Azure CLI scripts, or the Azure portal.
+
+
+
+Monitoring Service 
+- there are three primary Azure monitoring offerings
+
+Azure Advisor 
+- It evaluates your Azure resources and makes recommendations to help improve reliability, security, and performance, achieve operational excellence, and reduce costs.
+-  you can set up notifications to alert you to new recommendations.
+- Choose Azure Advisor when you're looking for an analysis of your deployed resource
+- areas where it provide recommendation are 5 - cost ,security ,performance ,reliablity ,operational excellence 
+
+Azure Monitor (related to resources ) 
+-  It is a platform for collecting, analyzing, visualizing, and potentially taking action based on the metric and logging data from your entire Azure and on-premises environment.
+- you can use the data to help you react to critical events in real time, through alerts delivered to teams via SMS, email, and so on
+-  if you want to keep track of the performance or issues related to your specific VM or container instances, databases, your applications, and so on, you want to visit Azure Monitor
+
+Azure Service Health ( related to service ) 
+- It provides a personalized view of the health of the Azure services, regions, and resources you rely on.
+- After an outage, Service Health provides official incident reports, called root cause analyses (RCAs), which you can share with stakeholders.
+- Service issues are problems in Azure, such as outages, that affect you right now
+-  You can view the current status of the Azure services you rely on, upcoming planned outages, and services that will be sunset. You can set up alerts that help you stay on top of incidents and upcoming downtime without having to visit the dashboard regularly

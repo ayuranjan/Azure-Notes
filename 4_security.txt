@@ -1,0 +1,97 @@
+
+
+
+
+Azure Security Center ( integrated with azure advisor )
+- Security posture refers to cybersecurity policies and controls, as well as how well you can predict, prevent, and respond to security threats.
+- Security Center can:
+	- Monitor security settings across on-premises and cloud workloads.
+	- Automatically apply required security settings to new resources as they come online.
+	- Provide security recommendations that are based on your current configurations, resources, and  	   networks.
+	- Continuously monitor your resources and perform automatic security assessments to identify      	   potential vulnerabilities before those vulnerabilities can be exploited.
+	- Use machine learning to detect and block malware from being installed on your virtual machines 	  (VMs) and other resources. You can also use adaptive application controls to define rules that 	  list allowed applications to ensure that only applications you allow can run.
+	- Detect and analyze potential inbound attacks and investigate threats and any post-breach 	  activity that might have occurred.
+	- Provide just-in-time(JIT) access control for network ports. Doing so reduces your attack surface by 	  ensuring that the network only allows traffic that you require at the time that you need it to.
+	- Security Center can monitor the internet traffic patterns of the VMs, and compare those 	   patterns with the company's current network security group (NSG) settings. From there, 	   Security Center can make recommendations about whether the NSGs should be locked down further 	   and provide remediation steps
+- Secure score is a measurement of an organization's security posture.Your score is based on the percentage of security controls that you satisfy.It has 60 security test
+- Workflow automation uses Azure Logic Apps and Security Center connectors. The logic app can be triggered by a threat detection alert or by a Security Center recommendation, filtered by name or by severity. You can then configure the logic app to run an action, such as sending an email, or posting a message to a Microsoft Teams channel.
+
+Azure 	Sentinel 
+- A SIEM(security information and event management ) system aggregates security data from many different sources . It also provides capabilities for threat detection and response.
+- Azure Sentinel is Microsoft's cloud-based SIEM system.
+- Azure Sentinel enables you to: 
+	- Collect cloud data at scale Collect data across all users, devices, applications, and 	   infrastructure, both on-premises and from multiple clouds.
+	- Detect previously undetected threats - both built-in analytics and custom rules to detect 	  threats.
+	- Investigate threats with artificial intelligence - With the investigation graph, the company 	  can review information from entities directly connected to the alert, and see common 	  exploration queries to help guide the investigation.
+	- Respond to incidents rapidly - use Azure Monitor Workbooks to automate responses to threats. 	  Workbooks can be run manually or automatically when a rule triggers an alert.
+
+For example, it can set an alert that looks for malicious IP addresses that access the network and create a workbook that does the following steps:
+
+- When the alert is triggered, open a ticket in the IT ticketing system.
+- Send a message to the security operations channel in Microsoft Teams or Slack to make sure the security analysts are aware of the incident.
+- Send all of the information in the alert to the senior network admin and to the security admin. The email message includes two user option buttons: Block or Ignore.
+- When an admin chooses Block, the IP address is blocked in the firewall, and the user is disabled in Azure Active Directory. When an admin chooses Ignore, the alert is closed in Azure Sentinel, and the incident is closed in the IT ticketing system.
+
+
+Azure KeyVault 
+-paas 
+- Azure Key Vault is a centralized cloud service for storing an application's secrets in a single, central location. It provides secure access to sensitive information by providing access control and logging capabilities.
+- Manage encryption keys
+- Manage SSL/TLS certificates
+
+
+Azure Dedicated Host 
+- It provides dedicated physical servers to host your Azure VMs for Windows and Linux.
+- A dedicated host is mapped to a physical server in an Azure datacenter. A host group is a collection of dedicated hosts.
+- This Lets you choose the number of processors, server capabilities, VM series, and VM sizes within the same host.
+-For high availability, you can provision multiple hosts in a host group, and deploy your VMs across this group.
+-You're charged per dedicated host, independent of how many VMs you deploy to it. The host price is based on the VM family, type (hardware size), and region.
+-ensure that certain VM workloads are physically isolated from workloads being run by other Azure customers?
+
+
+****************************************************************************************
+
+Secure Network Connectivity 
+
+Defense in Depth 
+
+- The objective of defense in depth is to protect information and prevent it from being stolen by those who aren't authorized to access it.
+- A defense-in-depth strategy uses a series of mechanisms to slow the advance of an attack that aims at acquiring unauthorized access to data.
+- You can visualize defense in depth as a set of layers, with the data to be secured at the center.
+
+Here's a brief overview of the role of each layer:
+
+- The physical security layer is the first line of defense to protect computing hardware in the datacenter.
+- The identity and access layer controls access to infrastructure and change control.Use single sign-on (SSO) and multifactor authentication.
+- The perimeter layer uses DISTRIBUTED DENIAL OF SERVICE (DDOS) protection to filter large-scale attacks before they can cause a denial of service for users.Use PERIMETER FIREWALLS to identify and alert on malicious attacks against your network.
+- The network layer limits communication between resources through segmentation and access controls.
+- The compute layer secures access to virtual machines.
+- The application layer helps ensure that applications are secure and free of security vulnerabilities.
+- The data layer controls access to business and customer data that you need to protect.Stored in software as a service (SaaS) applications, such as Office 365.
+
+Your security posture is your organization's ability to protect from and respond to security threats. The common principles used to define a security posture are confidentiality, integrity, and availability, known collectively as CIA.
+
+(1)Azure Firewall 
+-paas 
+- A firewall is a network security device that monitors incoming and outgoing network traffic and decides whether to allow or block specific traffic based on a defined set of security rules
+- Azure Firewall helps protect resources in your Azure virtual networks.
+- Azure Firewall is a stateful firewall. A stateful firewall analyzes the complete context of a network connection, not just an individual packet of network traffic. Azure Firewall features high availability and unrestricted cloud scalability.
+- The service is integrated with Azure Monitor to enable logging and analytics.
+- differenc b/w NSG and firewall is that NSG doesnt offer features for creating rules based on fully qualified domain name i.e site name 
+
+Azure Application Gateway also provides a firewall that's called the web application firewall (WAF). WAF provides centralized, inbound protection for your web applications against common exploits and vulnerabilities. Azure Front Door and Azure Content Delivery Network also provide WAF services.
+
+(2)DDOS Protection
+- DDoS Protection identifies the attacker's attempt to overwhelm the network and blocks further traffic from them, ensuring that traffic never reaches Azure resources
+- DDoS Protection can also help you manage your cloud consumption.. A cleverly designed DDoS attack can cause you to increase your resource allocation, which incurs unneeded expense
+- DDoS Protection provides these service tiers:
+	- The Basic service tier is automatically enabled for free as part of your Azure subscription.The Basic service tier ensures that Azure infrastructure itself is not affected during a large-scale DDoS attack.All public services are already protected by this nbasic plan .
+	- The Standard service tier provides additional mitigation capabilities that are tuned specifically to Azure Virtual Network resources. DDoS Protection Standard is relatively easy to enable and requires no changes to your applications.
+		- The Standard service tier can help prevent:Volumetric attacks,Protocol attacks(LAYER 3-4 attacks ) and Resource-layer (application-layer) attacks
+		
+(3) network security group 
+- It enables you to filter network traffic to and from Azure resources within an Azure virtual network. You can think of NSGs like an internal firewall.
+- filtering is controlled by rules
+
+Application Security Groups 
+ - allows grouping of Vm located in Vnet for easier maintenance 

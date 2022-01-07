@@ -1,0 +1,62 @@
+Cloud ? 
+Cloud computing is the delivery of computing services over the internet by using a pay-as-you-go pricing model . 
+cloud computing is a way to rent compute power and storage from someone else's datacenter
+
+why? 
+The cloud provider takes care of maintaining the underlying infrastructure for you
+
+how does azure works? 
+uses virtualisation( seperate time coupling b/w hardware and operating system using abstraction  layer called hypervisor ) 
+- hypervisor is like a real computer and it's cpu in virtual machine .It can run  multiple vm at same time and each vm can use any os .
+azure uses virtualisation and repeats it in massive scale on it's data center .
+
+Steps : - 
+- each data centre have many racks filled with servers 
+- a network switch provides connectivity with all those servers
+- each server in rack runs a special software called fabric controller
+- each fabric controller is connected to orchestrator ,which is responsible for managing everything that happens in azure corresponding to user request
+-user send request to azure \
+- it goes to orchestrator which packages everything needed to solve that request  , picks the best server rack , then send request to server's fabric controller 
+- each server have a hypervisor to run multiple vms .
+
+There are three deployment models for cloud computing:
+- Public -> Services are offered over the public internet and available to anyone who wants to purchase them.
+	- Organizations pay only for what they use.
+	- No capital expenditures to scale up
+- Private -> computing resources used exclusively by users from one business or organization
+	- Hardware must be purchased for start-up and maintenance
+	- Organizations have complete control over resources and security.
+	- Organizations are responsible for hardware maintenance and updates
+
+-Hybrid ->  combines a public cloud and a private cloud by allowing data and applications to be shared between them.
+	- Provides the most flexibility.
+	
+	
+cloud service models 
+
+- Iaas- infrastructure -- provides networking feature , storage ,computers ,etc .eg - azure ,aws 
+- Paas - platform -- eg- heroku,etc
+- Saas - software -- product is run and maitained by service provider eg - office 365 ,gmail,salesforce 
+
+- Capital Expenditure (CapEx) is the up-front spending of money on physical infrastructure, and then deducting that up-front expense over time. The up-front cost from CapEx has a value that reduces over time.
+Operational Expenditure (OpEx) is spending money on services or products now, and being billed for them now. You can deduct this expense in the same year you spend it. There is no up-front cost, as you pay for a service or product as you use it.
+
+
+-Azure is made up of datacenters located around the globe. When you use a service or create a resource such as a SQL database or virtual machine (VM), you're using physical equipment in one or more of these location
+
+-A region is a geographical area on the planet that contains at least one but potentially multiple datacenters that are nearby and networked together with a low-latency network. 
+    -Global regions provide better scalability and redundancy. They also preserve data residency for your services.
+	
+-Availability zones are physically separate datacenters within an Azure region
+Availability zones are created by using one or more datacenters. There's a minimum of three zones within a single region.
+
+- Each Azure region is always paired with another region within the same geography  which act as a backup 
+
+- We have to make resource group first to use any resource . It can have multiple resource . 
+-Resource groups make it easy to remove a set of resources all at once.For authorization also .
+- Resource groups are a fundamental element of the Azure platform
+-  logical unit of Azure services - subscription 
+
+- Azure Resource Manager is the deployment and management service for Azure
+- When a user sends a request from any of the Azure tools, APIs, or SDKs, Resource Manager receives the request. It authenticates and authorizes the request. Resource Manager sends the request to the Azure service, which takes the requested action. Because all requests are handled through the same API, you see consistent results and capabilities in all the different tools.
+Regions -> availablity zones(3 min) -> data centers -> servers -> 

@@ -1,0 +1,223 @@
+COMPUTE SERVICES 
+
+VM 
+-When you need total control over an operating system and environment, VMs are an ideal choice. Just like a physical computer, you can customize all the software running on the VM. This ability is helpful when you're running custom software or custom hosting configurations.
+-You can create and provision a VM in minutes when you select a preconfigured VM image.  An image is a template used to create a VM. These templates already include an OS and often other software, like development tools or web hosting environments
+- you can get significant cost savings by using an IaaS-based approach to disaster recovery. If a primary datacenter fails, you can create VMs running on Azure to run your critical applications and then shut them down when the primary datacenter becomes operational again.
+- VMs are also an excellent choice when you move from a physical server to the cloud (also known as lift and shift).
+
+
+Virtual machine scale sets
+- Virtual machine scale sets let you create and manage a group of identical, load-balanced VMs.
+- Scale sets allow you to centrally manage, configure, and update a large number of VMs in minutes to provide highly available applications
+-  it's easier to build large-scale services targeting big compute, big data, and containerized workloads. As demand goes up, more VM instances can be added. As demand goes down, VM instances can be removed.
+-Iaas
+
+Azure Batch 
+-Azure Batch enables large-scale parallel and high-performance computing (HPC) batch jobs with the ability to scale to tens, hundreds, or thousands of VMs.
+-Azure Batch is a Platform as a Service offering that has an entire plaform for scheduling, submitting tasks and obtaining their results
+- for situations in which you need raw computing power or supercomputer-level compute power
+
+
+
+App Service 
+-  platform as a service (PaaS) environment allows you to focus on the website and API logic while Azure handles the infrastructure to run and scale your web applications 
+- Endpoints can be secured.Sites can be scaled quickly to handle high traffic loads.
+-The built-in load balancing and traffic manager provide high availability.
+- it can host contrainers too 
+
+Containers Instances/Azure Kubernetes 
+- If you want to run multiple instances of an application on a single host machine, containers are an excellent choice.
+- Containers are lightweight, virtualized application environments .an
+-. Much like running multiple virtual machines on a single physical host, you can run multiple containers on a single physical or virtual host
+- Unlike virtual machines, you don't manage the operating system for a container.
+- VMs virtualise the hardware while containers virtualise the OS.
+- Containers are managed through a container orchestrator
+- One of the most popular container engines is Docker, which is supported by Azure.
+- Container Instances and Azure Kubernetes Service are Azure compute resources that you can use to deploy and manage containers. 
+-Containers are often used to create solutions by using a microservice architecture. This architecture is where you break solutions into smaller, independent pieces
+
+
+Serverless Computing 
+
+- With serverless computing, Azure takes care of managing the server infrastructure and the allocation and deallocation of resources based on demand.
+- Serverless computing is an excellent fit for workloads that respond to incoming events or else it just idle 
+- Instead of writing an entire application, the developer authors a function, which contains both code and metadata about its triggers and bindings.Triggers define how a function is invoked. Bindings provide a declarative way to connect to services from within the code.
+- With serverless computing, they pay only for the time their code runs. If no active function executions occur, they're not charged. 
+
+- Azure has two implementations of serverless compute:
+	Azure Functions: Functions can execute code in almost any modern language.
+	Azure Logic Apps: Logic apps are designed in a web-based designer and can execute logic triggered                           by Azure services without writing any code.
+
+Azure Functions
+- Functions are ideal when you're concerned only about the code running your service and not the underlying platform or infrastructure. 
+-Using a virtual machine-based approach, you'd incur costs even when the virtual machine is idle. With functions, Azure runs your code when it's triggered and automatically deallocates resources when the function is finished
+-Functions can be either stateless or stateful. When they're stateless (the default), they behave as if they're restarted every time they respond to an event. When they're stateful (called Durable Functions), a context is passed through the function to track prior activity.
+-Can run locally or in the cloud.
+- ideal for hosting application with unpredictable workload demands .
+
+Azure Logic Apps 
+- Where functions execute code, logic apps execute workflows that are designed to automate business scenarios and are built from predefined logic blocks.
+- Stateful
+-Runs only in the cloud.
+
+Functions and Logic Apps can both create complex orchestrations. An orchestration is a collection of functions or steps that are executed to accomplish a complex task.
+- With Functions, you write code to complete each step.
+- With Logic Apps, you use a GUI to define the actions and how they relate to one another.
+
+
+Azure Virtual Desktop (VDI)
+- It enables your users to use a cloud-hosted version of Windows from any location. Azure Virtual Desktop works across devices like Windows, Mac, iOS, Android, and Linux.
+- They use a Azure Virtual Desktop client to connect to their published Windows desktop and applications. This client could either be a native application on the device or the Azure Virtual Desktop HTML5 web client.
+-User sign-in to Azure Virtual Desktop is fast because user profiles are containerized by using FSLogix. At sign-in, the user profile container is dynamically attached to the computing environment. The user profile is immediately available and appears in the system exactly like a native user profile.
+-Azure Virtual Desktop provides centralized security management for users' desktops with Azure Active Directory (Azure AD). You can enable multifactor authentication to secure user sign-ins. You can also secure access to data by assigning granular role-based access controls (RBACs) to users. 
+- Azure Virtual Desktop lets you use Windows 10 Enterprise multi-session, the only Windows client-based operating system that enables multiple concurrent users on a single VM.
+
+
+NETWORKING SERVICES 
+
+Virtual Network (V-net)
+-IaaS
+- Azure virtual networks enable Azure resources, such as VMs, web apps, and databases, to communicate with each other, with users on the internet, and with your on-premises client computers
+- Filter network traffic and provide security 
+- Virtual Network allows you to create multiple isolated virtual networks or subnets. When you set up a virtual network, you define a private IP address space by using either public or private IP address ranges. You can divide that IP address space into subnets and allocate part of the defined address space to each named subnet.
+- depends on region 
+
+- You'll want to enable Azure resources to communicate securely with each other. You can do that in one of two ways:
+	- Virtual networks 
+	- Service endpoints - This approach enables you to link multiple Azure resources to virtual networks to improve security and provide optimal routing between resources.
+
+- you can create a network that spans both your local and cloud environments. There are three mechanisms for you to achieve this connectivity:
+	- Point-to-site VPN(virtual private network) : In this case, the client computer initiates an encrypted VPN connection to connect that computer to the Azure virtual network
+	- Site-to-site VPN - A site-to-site VPN links your on-premises VPN device or gateway to the Azure VPN gateway in a virtual network. The connection is encrypted and works over the internet.
+	- Azure ExpressRoute For environments where you need greater bandwidth and even higher levels of security, Azure ExpressRoute is the best approach. private connectivity to Azure that doesn't travel over the internet.ExpressRoute does provide private connectivity, but it isn't encrypted.
+
+-  You also can control routing and override those settings, as follows :
+	- Route tables - A route table allows you to define rules about how traffic should be directed. You can create custom route tables that control how packets are routed between subnets.
+	- Border Gateway Protocol - BGP works with Azure VPN gateways or ExpressRoute to propagate on-premises BGP routes to Azure virtual networks
+
+- Azure virtual networks enable you to filter traffic between subnets by using 
+	 - Network security groups -  an Azure resource that can contain multiple inbound and outbound security rules. You can define these rules to allow or block traffic, based on factors such as source and destination IP address, port, and protocol.
+	- Network virtual appliances - A network virtual appliance carries out a particular network function, such as running a firewall or performing wide area network (WAN) optimizationx
+
+- You can link virtual networks together by using virtual network peering or VPN Gateway . Peering enables resources in each virtual network to communicate with each other. These virtual networks can be in separate regions, which allows you to create a global interconnected network through Azure
+
+- When you set up a virtual network, you define the internal address space in Classless Interdomain Routing (CIDR) format.We can't have overlapping address . Eg -  10.0.0.0/24  - this address space range from 10.0.0.1 to 10.0.0.254. You can add address spaces after you create the virtual network.
+	Within each virtual network address range, you can create one or more subnets that partition the virtual network's address space. 
+
+- VPN - Virtual Private Network is used to connect two or more trusted private networks.Eg- A VPN that connects your East Coast offices to your West Coast servers allows your company to securely access your private customer data.
+	
+- VPN Gateway - A VPN gateway is a specific type of virtual network gateway that is used to send encrypted traffic between an Azure virtual network and an on-premises location over the public Internet.
+	You can deploy only one VPN gateway in each virtual network, but you can use one gateway to connect to multiple locations, which includes other virtual networks or on-premises datacenters.
+	When you deploy a VPN gateway, you specify the VPN type: either policy-based or route-based. 
+	- Policy Based - specify statically the IP address of packets that should be encrypted through each tunnel . Use of static routing
+	- Route based -   preferred connection method for on-premises devices. They're more resilient to topology changes such as the creation of new subnets.use dynamic routing protocols
+
+- You'll need these Azure resources before you can deploy an operational VPN gateway
+	- Virtual network.
+	- GatewaySubnet- Deploy a subnet called GatewaySubnet for the VPN gateway. Use at least a /27 address mask to make sure you have enough IP addresses in the subnet for future growth
+	- Public IP address.- This IP address is dynamic, but it won't change unless you delete and re-create the VPN gateway.
+	- Local network gateway - Create a local network gateway to define the on-premises network's configuration, such as where the VPN gateway will connect and what it will connect to
+	- Connection. Create a connection resource to create a logical connection between the VPN gateway and the local network gateway.You can create multiple connections.
+ 
+
+- ExpressRoute lets you extend your on-premises networks into the Microsoft cloud over a private connection with the help of a connectivity provider .Built-in redundancy in every peering location for higher reliability.QoS support for Skype for Business.
+- Info needed to proceed - Layer 2 (L2): This layer is the Data Link Layer, which provides node-to-node communication between two nodes on the same network.
+Layer 3 (L3): This layer is the Network Layer, which provides addressing and routing between nodes on a multi-node network.
+- ExpressRoute supports three models that you can use to connect your on-premises network to the Microsoft cloud:
+	- CloudExchange colocation -  can normally offer both Layer 2 and Layer 3 connections between your infrastructure ,which might be located in the colocation facility, and the Microsoft cloud
+	- Point-to-point Ethernet connection - provide Layer 2 and Layer 3 connectivity between your on-premises site and Azure
+	- Any-to-any connection -  you can integrate your wide area network (WAN) with Azure by providing connections to your offices and datacenters.all WAN providers offer Layer 3 connectivity
+
+-  ExpressRoute uses the Border Gateway Protocol (BGP) routing protocol. BGP is used to exchange routes between on-premises networks and resources running in Azure. This protocol enables dynamic routing between your on-premises network and services running in the Microsoft cloud.
+- Content Delivery Network (CDN) - allows you to geographically cache and distribute high-bandwidth content, such as streaming videos, to users in different parts of the world. 
+	- Delivers web contents to user ,minimize latency by using points of presence(pop) location 
+	
+-Azure Loadbalancer - for even trafic distribution ,alows high availablity and scalability .
+-Application gateway -loadbalncer for web traffic i.e HTTPS . Have firewall ,routing  
+	
+	
+	
+	
+	
+	
+*********************************************************************************************************
+	
+	
+ Azure Storage Service 
+ 
+ - Azure storage isn't the same as Azure database services.
+ 
+ Azure Disk Storage
+ - Azure VMs use Azure Disk Storage to store virtual disks. However, you can't use Azure Disk Storage to store a disk outside of a virtual machine.
+ - You can use standard SSD and HDD disks for less critical workloads, premium SSD disks for mission-critical production applications, and ultra disks for data-intensive workloads such as SAP HANA, top tier databases, and transaction-heavy workloads
+- A VM can use multiple disk to store data 
+
+Azure Blob Storage 
+-Binary Large Object  i.e any files 
+- Azure Blob Storage is an object storage solution for the cloud.
+- unstructured,can manage thousands of simultaneous uploads, massive amounts of video data ,etc 
+- You store blobs in containers, which helps you organize your blobs depending on your business needs.
+-Storing data for backup and restore, disaster recovery, and archiving.
+- Called container in azure ui .
+
+Azure Files
+-  Storage for files accessed via shared drive protocol 
+-  Azure Files makes it easier to migrate those applications that share data to Azure.
+- Azure Files ensures the data is encrypted at rest, and the SMB protocol ensures the data is encrypted in transit.
+- same as Blob storage only difference is how we access them i.e. by SMB protocol .
+
+Blob Access tiers 
+- Azure provides several access tiers, which you can use to balance your storage costs with your access needs.
+- Hot access tier: Optimized for storing data that is accessed frequently
+- Cool access tier: Optimized for data that is infrequently accessed and stored for at least 30 days
+- Archive access tier: Appropriate for data that is rarely accessed and stored for at least 180 days
+-Hot, cool, and archive tiers can be set at the blob level, during upload or after upload.The archive access tier isn't available at the account level.
+
+Azure Queue Storage 
+- Storage for small piece of data (messages ) for scalable asynchronous processing 
+
+Azure Table Storage 
+- for semi structured data 
+- NoSQL 
+-fast access 
+
+*********************************************************************************************************************************
+Database Services 
+
+Azure Cosmos DB 
+- It is a globally distributed, multi-model database service
+- Azure Cosmos DB supports schema-less data(NoSQL), which lets you build highly responsive and "Always On" applications to support constantly changing data. You can use this feature to store data that's updated and maintained by users around the world.
+- Azure Cosmos DB stores data in atom-record-sequence (ARS) format.the data is then abstracted and projected as an API eg - SQL, MongoDB, Cassandra, Tables, and Gremlin.
+- migrate your company's databases to Azure Cosmos DB, your developers can stick with the API that they're the most comfortable with.
+
+Azure SQL Database 
+- It is a relational database based on the latest stable version of the Microsoft SQL Server database engine. SQL Database is a high-performance, reliable, fully managed, and secure database
+- Azure SQL Database is a platform as a service (PaaS) database engine. It handles most of the database management functions, such as upgrading, patching, backups, and monitoring, without user involvement. SQL Database provides 99.99 percent availability
+-  it enables you to process both relational data and non-relational structures, such as graphs, JSON, spatial, and XML.
+- You can migrate your existing SQL Server databases with minimal downtime by using the Azure Database Migration Service
+
+Azure Database for MySQL
+- It is a relational database service in the cloud .With it, you have a 99.99 percent availability service level agreement
+-  you take advantage of built-in security, fault tolerance, and data protection
+-  you can use point-in-time restore to recover a server to an earlier state, as far back as 35 days.
+- . Dynamic scalability enables your database to transparently respond to rapidly changing resource requirements. You only pay for the resources you need, and only when you need them.
+
+Azure Database for PostgreSQL
+- Your familiarity with tools and expertise with PostgreSQL is applicable when you're using Azure Database for PostgreSQL.
+- Built-in high availability compared to on-premises resources
+- Adjustable automatic backups and point-in-time-restore for up to 35 days.
+- Azure Database for PostgreSQL is available in two deployment options: Single Server and Hyperscale (Citus).
+- The Hyperscale (Citus) option horizontally scales queries across multiple machines by using sharding. Its query engine parallelizes incoming SQL queries across these servers for faster responses on large datasets. It serves applications that require greater scale and performance, generally workloads that are approaching, or already exceed, 100 GB of data.
+
+Azure SQL Managed Instance
+- It is a scalable cloud data service that provides the broadest SQL Server database engine compatibility with all the benefits of a fully managed platform as a service
+- Azure SQL Database and Azure SQL Managed Instance offer many of the same features; however, Azure SQL Managed Instance provides several options that might not be available to Azure SQL Database
+
+Big Data 
+Azure supports a broad range of technologies and services to provide big data and analytic solutions, including Support end to end data transformation with power of SQL and spark 
+	- Azure Synapse Analytics -You can query data on your terms by using either serverless or provisioned resources at scale.
+	- Azure HDInsight -  It's a cloud service that makes it easier, faster,flexible and more cost-effective to process massive amounts of data. You can run popular open-source frameworks 
+	- Azure Databricks - helps you unlock insights from all your data and build artificial intelligence solutions.Based on Aparche Spark .
+	- Azure Data Lake Analytics. - Instead of deploying, configuring, and tuning hardware, you write queries to transform your data and extract valuable insight
+-PaaS 

@@ -1,0 +1,110 @@
+- Authentication is the process of establishing the identity of a person or service that wants to access a resource.
+-authorization defines what kinds of applications, resources, and data that user can access.
+
+Azure Active Directory (AD) 
+- Azure AD is Microsoft's cloud-based identity and access management service
+- When you secure identities on-premises with Active Directory, Microsoft doesn't monitor sign-in attempts. When you connect Active Directory with Azure AD, Microsoft can help protect you by detecting suspicious sign-in attempts at no extra cost
+- Azure AD provides services such as:
+	- Authentication-  It also includes providing functionality such as self-service password reset, multifactor authentication, a custom list of banned passwords, and smart lockout services.
+	- Single sign-on - SSO enables you to remember only one username and one password to access multiple applications.
+	- Application management -Azure AD helps users access both external and internal resources.External resources might include Microsoft Office 365, the Azure portal,etc . Internal resources might include apps on your corporate network and intranet
+	- Device management
+	
+- There are a few ways to connect your existing Active Directory installation with Azure AD. Perhaps the most popular method is to use Azure AD Connect.Azure AD Connect synchronizes user identities between on-premises Active Directory and Azure AD
+
+Multifactor authentication 
+- It is a process where a user is prompted during the sign-in process for an additional form of identification. Examples include a code on their mobile phone or a fingerprint scan.
+-Azure AD Multi-Factor Authentication is a Microsoft service that provides multifactor authentication capabilities. Azure AD Multi-Factor Authentication enables users to choose an additional form of authentication during sign-in, such as a phone call or mobile app notification.
+
+Conditional Access 
+- It is a tool that Azure Active Directory uses to allow (or deny) access to resources based on identity signals. These signals include who the user is, where the user is, and what device the user is requesting access from.
+- Conditional Access comes with a What If tool, which helps you plan and troubleshoot your Conditional Access policies.
+-To use Conditional Access, you need an Azure AD Premium P1 or P2 license. If you have a Microsoft 365 Business Premium license, you also have access to Conditional Access features.
+
+****************************************************************************************
+RBAC
+-build on Azure Resource Manager 9
+- Instead of defining the detailed access requirements for each individual, and then updating access requirements when new resources are created, Azure enables you to control access through Azure role-based access control (Azure RBAC).
+- Role is a collection of action that the assigned identity will be able to perform  
+-Azure provides built-in roles that describe common access rules for cloud resources. You can also define your own roles
+- Thevrole can  be assigned on any level i.e. resource ,resource group , subscription or management group .its hierarchial 
+- role assignment is a combination of role definition(what can you do)  , security principle(who can do it)  and scope(where can yo do it) 
+
+-Azure RBAC is enforced on any action that's initiated against an Azure resource that passes through Azure Resource Manager. Resource Manager is a management service that provides a way to organize and secure your cloud resources.
+- You typically access Resource Manager from the Azure portal, Azure Cloud Shell, Azure PowerShell, and the Azure CLI.
+-RBAC uses an allow model. When you're assigned a role, RBAC allows you to perform certain actions, such as read, write, or delete
+- you can apply Azure RBAC to an individual person or to a group. You can also apply Azure RBAC to other special identity types, such as service principals and managed identities
+- you manage access permissions on the Access control (IAM) pane in the Azure portal. This pane shows who has access to what scope and what roles apply. You can also grant or remove access from this pane.
+
+
+A resource lock
+- it prevents resources from being accidentally deleted or changed.
+- To view, add, or delete locks in the Azure portal, go to the Settings section of any resource's Settings pane in the Azure portal.
+- You can apply locks to a subscription, a resource group(recommended), or an individual resource. You can set the lock level to CanNotDelete or ReadOnly.
+- What if a cloud administrator accidentally deletes a resource lock? If the resource lock is removed, its associated resources can be changed or deleted
+- it is inherited 
+- To make the protection process more robust, you can combine resource locks with Azure Blueprints. Azure Blueprints enables you to define the set of standard Azure resources that your organization requires.Azure Blueprints can automatically replace the resource lock if that lock is removed.
+
+Tags 
+- Resource tags are another way to organize resources. Tags provide extra information, or metadata, about your resources.
+- have name (key) - value pair ,key should be unique within the scope of a single resource .
+- You can add, modify, or delete resource tags through PowerShell, the Azure CLI, Azure Resource Manager templates, the REST API, or the Azure portal.You can also manage tags by using Azure Policy
+- Resource tag are not inherited 
+- You can use Azure Policy to ensure that a resource inherits the same tags as its parent resource group.You can also use Azure Policy to enforce tagging rules and conventions
+-same scope as resource lock 
+
+
+Azure Policy
+- It is a service in Azure that enables you to create, assign, and manage policies that control or audit your resources. These policies enforce different rules across all of your resource configurations so that those configurations stay compliant with corporate standards.
+-Azure Policy enables you to define both individual policies and groups of related policies, known as initiatives
+- Implementing a policy in Azure Policy involves three tasks:
+	- Create a policy definition. - A policy definition expresses what to evaluate and what action to take.
+	- Assign the definition to resources.- To implement your policy definitions, you assign definitions to resources. A policy assignment is a policy definition that takes place within a specific scope. Policy assignments are inherited by all child resources within that scope,You can exclude a subscope from the policy assignment if there are specific child resources you need to be exempt from the policy assignment
+	- Review - When a condition is evaluated against your existing resources, each resource is marked as compliant or noncompliant. You can review the noncompliant policy results and take any action that's needed.
+	
+Azure Blueprints
+-Centralized repository of approved design pattern 
+- Instead of having to configure features like Azure Policy for each new subscription, with Azure Blueprints you can define a repeatable set of governance tools and standard Azure resources that your organization requires. 
+- Each component in the blueprint definition is known as an artifact.
+- Artifacts can also contain one or more parameters that you can configure i.e Role Assignment , Policy Assignment, ARM templates and  Resource Group 
+- You can specify a parameter's value when you create the blueprint definition or when you assign the blueprint definition to a scope.
+
+
+The Cloud Adoption Framework for Azure
+- It provides you with proven guidance to help with your cloud adoption journey. The Cloud Adoption Framework helps you create and implement the business and technology strategies needed to succeed in the cloud.
+-  Cloud Adoption Framework consists of tools, documentation, and proven practices
+- Stages 
+	- Stratergy - why move to cloud 
+	- Plan 
+	- Ready - prepare and align user , processess and environment 
+	- Adopt - start migration 
+	- Govern - align compliance and security standards 
+	- Manage 
+
+
+
+
+- At the beginning of any cloud governance implementation, you identify a cloud organization structure that meets your business needs. This step often involves forming a cloud center of excellence team
+-There are three main aspects to consider when you create and manage subscriptions: billing, access control, and subscription limits.
+
+
+****************************************************************************************
+
+- The Online Services Terms (OST) is a legal agreement between Microsoft and the customer. The OST details the obligations by both parties with respect to the processing and security of customer data and personal data.
+-The Data Protection Addendum (DPA) further defines the data processing and security terms for online services. These terms include:
+	- Compliance with laws.
+	- Disclosure of processed data.
+	- Data Security, which includes security practices and policies, data encryption, data access, customer responsibilities, and compliance with auditing.
+	- Data transfer, retention, and deletion.
+	
+-The Trust Center showcases Microsoft's principles for maintaining data integrity in the cloud and how Microsoft implements and supports security, privacy, compliance, and transparency in all Microsoft cloud products and services
+-The Azure compliance documentation provides you with detailed documentation about legal and regulatory standards and compliance on Azure.
+-Azure Government is a separate instance of the Microsoft Azure service. It addresses the security and compliance needs of US federal agencies, state and local governments, and their solution providers. Azure Government offers physical isolation from non-US government deployments and provides screened US personnel.
+-Azure China 21Vianet is operated by 21Vianet. It's a physically separated instance of cloud services located in China. Azure China 21Vianet is independently operated.he Azure service in China is operated by 21Vianet, based on the technologies licensed from Microsoft.
+
+
+key points --- 
+1. The Microsoft Privacy Statement provides information that's relevant to specific services, including Cortana.personal data .
+2. The Trust Center is a great resource for people in your organization who might play a role in security, privacy, and compliance.legal team access information around how the Microsoft cloud helps them secure sensitive data and comply with applicable laws and regulations
+3 . The compliance documentation provides reference blueprints, or policy definitions, for common standards that you can apply to your Azure subscription.
+4 .Microsoft Compliance Manager helps you manage your organization's compliance needs including the inventory of data protection risks,  changes within your chosen regulation or certification, reporting to auditors.Microsoft Compliance Manager measures your compliance through a centralized dashboard 

@@ -1,0 +1,82 @@
+The TCO Calculator 
+
+- helps you estimate the cost savings of operating your solution on Azure over time, instead of in your on-premises datacenter.
+- The term total cost of ownership is commonly used in finance. It can be hard to see all the hidden costs related to operating a technology capability on-premises. Software licenses and hardware are additional costs.
+- This works in 3 steps : -
+	- Define your workloads : you enter the specifications of your on-premises infrastructure into the TCO Calculator, based on these four categories:
+		- Servers - includes operating systems, virtualization methods, CPU cores, and memory (RAM).
+		- Database -  database types, server hardware, and the Azure service you want to use 
+		- Storage -  includes storage type and capacity, which includes any backup or archive storage
+		- Networking - includes the amount of network bandwidth you currently consume in your on-premises environment
+	- Adjust Assumptions - To improve the accuracy of the TCO Calculator results, you adjust the values so that they match the costs of your current on-premises infrastructure.
+	- View Report - To improve the accuracy of the TCO Calculator results, you adjust the values so that they match the costs of your current on-premises infrastructure.
+
+	
+	
+There are three main ways to purchase services on Azure
+- Through an Enterprise Agreement - Larger customers, known as enterprise customers, can sign an Enterprise Agreement with Microsoft. The service fee is typically paid annually
+- Directly from the web - Here, you purchase Azure services directly from the Azure portal website and pay standard prices. You're billed monthly, as a credit card payment or through an invoice
+- Through a Cloud Solution Provider - A Cloud Solution Provider (CSP) is a Microsoft Partner who helps you build solutions on top of Azure. Your CSP bills you for your Azure usage at a price they determine. They also answer your support questions and escalate them to Microsoft, as needed.
+
+- When you provision a resource, Azure creates meters to track usage of that resource. Azure uses these meters to generate a usage record that's later used to help calculate your bill.
+
+- Different regions can have different associated prices. Because geographic regions can impact where your network traffic flows, network traffic is a cost influence to consider as well.But, if they need to transfer data between those regions, or if their users are located in different parts of the world, any potential savings could be offset by the additional network usage costs of transferring data between those resources.
+
+Pricing Calculator
+- Suggest which azure service is best suited for your budget 
+- The Pricing calculator displays Azure products in categories. You add these categories to your estimate and configure according to your specific requirements. You then receive a consolidated estimated price, with a detailed breakdown of the costs associated with each resource you added to your solution
+
+Azure Advisor 
+- to montitor the actual cost 
+
+- you can use spending limits to prevent accidental overrun.A related concept is quotas, or limits on the number of similar resources you can provision within your subscription
+
+-Azure Reservations offers discounted prices on certain Azure services. Azure Reservations can save you up to 72 percent as compared to pay-as-you-go prices. To receive a discount, you reserve services and resources by paying in advance.
+
+- Tags help you manage costs associated with the different groups of Azure products and resources. You can apply tags to groups of Azure resources to organize billing data.
+For example, if you run several VMs for different teams, you can use tags to categorize costs by department, such as Human Resources, Marketing, or Finance, or by environment, such as Test or Production.
+
+- Tags make it easier to identify groups that generate the biggest Azure costs, which can help you adjust your spending accordingly.
+
+-one way to reduce costs is to gradually move IaaS workloads to run on platform as a service (PaaS) services. While you can think of IaaS as direct access to compute infrastructure, PaaS provides ready-made development and deployment environments that are managed for you.
+
+
+-Cost Reduction Methods 
+	-Reservation - we reserve the resource for a particular time(1 or 3 YEARS)  and get discount .Types - reserved instance ( for vm) , reserved capacity ( for paas ) and reserve software plans 
+	-spot pricing - every vm has a unused capacity ,we can use it on discount .Capacity can be taken at any time by microsoft 
+	- Hybrid use benefit - use existing license in azure 
+
+Azure Cost Management 
+- centralised service for reporting usage and billing ,automated export of billing 
+- send alert and recommendation and budgets 
+
+****************************************************************************************
+SLA 
+- a service-level agreement (SLA) is a formal agreement between a service company and the customer. For Azure, this agreement defines the performance standards that Microsoft commits to for you, the customer.
+- Azure SLA are represented as a % related to the service/application availablity .This availablity is unknown as UpTime .It also includes the DownTime and credit is given if SLA is not meet .
+- A service credit is the percentage of the fees you paid that are credited back to you according to the claim approval process.
+-Free products typically don't have an SLA.
+
+Azure Status 
+- Azure status provides a global view of the health of Azure services and regions. If you suspect there's an outage, this is often a good place to start your investigation. 
+
+application SLA 
+- An application SLA defines the SLA requirements for a specific application. This term typically refers to an application that you build on Azure.
+- The process of combining SLAs helps you compute the composite SLA for a set of services. Computing the composite SLA requires that you multiply the SLA of each individual service if they are logical and . In case of logical OR composite SLA = 100- ( MULTIPLY INDIVIDUAL Unavailablity of SLAs ) 
+- to improve the availability of the application, avoid having any single points of failure. So instead of adding more virtual machines, you can deploy one or more extra instances of the same virtual machine across the different availability zones in the same Azure region.
+-To ensure high availability, you might plan for your application to have duplicate components across several regions, known as redundancy
+
+service lifecycle
+- The service lifecycle defines how every Azure service is released for public use
+- Every Azure service starts in the development phase. In this phase, the Azure team collects and defines its requirements, and begins to build the service.
+- Next, the service is released to the public preview phase. During this phase, the public can access and experiment with it and provide real-world feedback.
+- After a new Azure service has been validated and tested, it's released to all customers as a production-ready service. This is known as general availability (GA).It migh not be true that all its features are in GA 
+
+
+
+Support Plans 
+1. Basic - Free 
+2. Developer - technical support by email on Business Hours , Response time (8hrs) 
+3. Standard - 24/7 access to technical support by email and phone, Quicker Response Time 
+4.Professional Direct - support API ,Training, Proactive Guidance, Service reviews and advisory consultation
+

@@ -1,0 +1,109 @@
+- agility - ablity to scale quickly . If scaling is automatic its called elasticity .
+- Geography -> Regions -> availablity zones -> data centers -> servers
+- When a data center has failure it is protected by avaliablity zone .
+- Availability zones are physically separate datacenters within an Azure region
+- one or more data centers make region 
+- zone enabled region has min of 3 avalablity zones 
+- Azure Region - every region has one region pair ,with which it is synchronized to ensure that updates don't happen at same time .
+- Resource groups are a fundamental element of the Azure platform
+-  logical unit of Azure services - subscription 
+- Private cloud” means that the physical servers are managed by you. It does not mean that it is disconnected from the Internet.
+
+- Azure Batch - large-scale parallel and high-performance computing VMs ,pass 
+- Azure App Service is a platform-as-a-service (PaaS) offering that lets you create web and mobile apps for any platform or device and connect to data anywhere, in the cloud or on-premise. it can host containers too 
+- Server-less computing is an excellent fit for workloads that respond to incoming events or else it just idle .they pay only for the time their code runs
+- Azure Virtual Desktop enables your users to use a cloud-hosted version of Windows from any location using the internet 
+
+
+- Azure ExpressRoute - .When you want to create VNet that spans both on premise and cloud where you need greater bandwidth and even higher levels of security.ExpressRoute does provide private connectivity, but it isn't encrypted
+-  ExpressRoute uses the Border Gateway Protocol (BGP) routing protocol. BGP is used to exchange routes between on-premises networks and resources running in Azure. This protocol enables dynamic routing between your on-premises network and services running in the Microsoft cloud.
+- A VPN gateway is a specific type of virtual network gateway that is used to send encrypted traffic between an Azure virtual network and an on-premises location over the public Internet.
+- virtual network peering -  You can link virtual networks together
+-Application gateway -loadbalancer for web traffic i.e HTTPS . Have firewall ,routing  
+- Content Delivery Network (CDN) - allows you to geographically cache and distribute high-bandwidth content, such as streaming videos, to users in different parts of the world. 
+	- Delivers web contents to user ,minimise latency by using points of presence(pop) location 
+
+- Azure Storage accounts are an IaaS 
+- Azure Disk Storage - storage inside VM
+- Azure Cosmos DB supports schema-less data(NoSQL), which lets you build highly responsive and "Always On" applications to support constantly changing data.unstructured and JSON data.can add data concurrently from multiple region simultaneously .
+-Azure SQL Database - it enables you to process both relational data and non-relational structures, such as graphs, JSON, spatial, and XML.
+- Azure SQL Managed Instance - broadest SQL Server database engine compatibility with all 
+-Azure Synapse Analytics - You can query data on your terms by using either serverless or provisioned resources at scale.transform your data
+- Azure HDInsight -  It's a full managed open source cloud service that makes it easier, faster, and more cost-effective to process massive amounts of data. You can run popular open-source frameworks and provision. Cluster . 
+- Azure Databricks - helps you unlock insights from all your data and build artificial intelligence solutions.
+- Azure Data Lake Analytics. -  you write queries to transform your data and extract valuable insight
+From azure data lake (to store massive amount of data -petabite of data)
+
+-Azure IoT Hub  -  When you need to send data from iot devices but don't need future reporting features
+- Azure IoT Central - If you want a dashboard to control , monitor and report Iot devices.A key part of IoT Central is the use of device templates. By using a device template, you can connect a device without any service-side coding.
+- Azure Sphere - When security is we use Azure Sphere .Azure Sphere has a monitoring dashboard and messaging hub 
+
+- Azure Machine Learning - need complete control over the design and training of an algorithm using your own data. 
+- Machine learning Workspace - top level resource .. Machine learning studio - web portal for end to end development 
+- Azure Cognitive Services -  provides pretrained models so that you can bring in your live data to get predictions on.
+- Event Grid - event routing service in azure  ,Routing of messages to correct location 
+
+- Azure DevOps Services 
+	- Azure Repos is a centralized source-code repository 
+	- Azure Boards is an agile project management suite that allow you to assign tasks to a user.
+	- Azure Pipelines is a CI/CD pipeline automation tool.
+	- Azure Artifacts is a repository for hosting artifacts, such as compiled source code
+	- Azure Test Plans is an automated test tool
+- -Suppose you need to test a new feature on an old version of an operating system. Azure DevTest Labs can set up everything automatically upon request.
+-Azure PowerShell is available for Windows, Linux, and Mac, and you can access it in a web browser via Azure Cloud Shell.for windows background 
+-- the Azure CLI is almost identical to Azure PowerShell in what you can do with it.  The primary difference is the syntax you use . more linux background 
+- ARM templates - Azure Resource Manager templates is verified before any code is executed to ensure that the resources will be created and connected correctly. Use for Automation of proceesses .you can describe the resources you want to use in a declarative JSON format
+
+- Azure Advisor  - when you're looking for an analysis of your deployed resource and recommendations. areas where it provide recommendation are 5 - cost ,security ,performance ,reliablity ,operational excellence .Identity idle and underutilised resource .
+- Azure Monitor (related to resources ) -if you want to keep track of the performance or issues related to your specific VM or container instances, databases, your applications, and so on
+- Azure Service Health ( related to service ) - You can view the current status of the Azure services you rely on, upcoming planned outages, and services that will be sunset. After an outage, Service Health provides official incident reports, called root cause analyses (RCAs)
+
+
+-Azure Security Center - Can monitor ,automate ,recommend ,detect ,block ,use ml to do such . Workflow automation uses Azure Logic Apps and Security Center connectors.provide just-in-time(JIT) ensuring that the network only allows traffic that you require at the time that you need it to.
+- Azure Sentinel - Microsoft's cloud-based security information and event management  system .Detect previously undetected threats ,Investigate threat using AI,  Respond to incidents rapidly - use Azure Monitor Workbooks to automate responses to threats
+-Azure KeyVault -  for storing an application's secrets, encryption keys ,Manage certificates
+- A defense-in-depth strategy uses a series of mechanisms to slow the advance of an attack that aims at acquiring unauthorized access to data.
+- difference b/w NSG and firewall is that NSG doesn't offer features for creating rules based on fully qualified domain name i.e site name 
+- DDoS Protection provides these service tiers:
+	- The Basic service tier is automatically enabled for free as part of your Azure 
+	- The Standard service tier can help prevent:Volumetric attacks,Protocol attacks(LAYER 3-4 attacks ) and Resource-layer (application-layer) attacks
+- Application Security Groups - allows grouping of Vm located in Vnet for easier maintenance 
+
+- Azure Active Directory (AD) - cloud-based identity and access management service . Azure AD Connect synchronises user identities between on-premises Active Directory and Azure AD
+- Conditional Access - It is a tool that Azure Active Directory uses to allow (or deny) access to resources based on identity signals. These signals include who the user is, where the user is, and what device the user is requesting access from.To use Conditional Access, you need an Azure AD Premium P1 or P2 license
+-Role assignment is a combination of role definition(what can you do)  , security principle(who can do it)  and scope(where can yo do it) 
+- The role can  be assigned on any level i.e. resource ,resource group , subscription or management group .its hierarchical
+- you manage access permissions on the Access control (IAM) pane in the Azure portal
+- Resource locks - You can apply locks to a subscription, a resource group(recommended), or an individual resource. You can set the lock level to CanNotDelete or ReadOnly.it is inherited 
+-Tags provide extra information, or metadata, about your resources. have name (key) - value pair.You can use Azure Policy to ensure that a resource inherits the same tags as its parent resource as they are not inherited .
+-Azure Policy - more like a business Rule .Azure Policy enables you to define both individual policies and groups of related policies, known as initiatives
+- Azure Blueprints- Centralized repository of approved design pattern .with Azure Blueprints you can define a repeatable set of governance tools and standard Azure resources that your organization requires. .Each component in the blueprint definition is known as an artifact.
+-  Cloud Adoption Framework consists of tools, documentation, and proven practices to help with your cloud adoption journey.
+
+- The Microsoft Privacy Statement provides information that's relevant to specific services, including Cortana.personal data .
+- The Online Services Terms (OST) is a legal agreement between Microsoft and the customer.This include licensing terms including maps .what can be done and what can't .
+-The Azure compliance documentation provides you with detailed documentation about legal and regulatory standards and compliance on Azure.
+
+- TCO (total cost of ownership ) - estimation of all cost associated with on premises enivornment 
+-Pricing calcualtor - estimate cost of azure service 
+- you can use spending limits to prevent accidental overrun
+-You can apply tags to groups of Azure resources to organize billing data.
+-one way to reduce costs is to gradually move IaaS workloads to run on platform as a service (PaaS) services.
+- Cost Affecting Factors 
+	- Resource Type 
+	- Services 
+	-Location 
+	-Bandwidth 
+-Cost Reduction Methods 
+	-Reservation - we reserve the resource for a particular time(1 or 3 YEARS) and get discount .
+	-spot pricing - every vm has a unused capacity ,we can use it on discount .Capacity can be taken at any time by microsoft 
+	- Hybrid use benefit - use existing license in azure 
+- Azure Cost Management - centralised service for reporting usage and billing ,automated export of billing ,send alert and recommendation and budgets 
+- a service-level agreement (SLA) is a formal agreement between a service company and the customer. For Azure, this agreement defines the performance standards that Microsoft commits to for you, the customer.
+- you multiply the SLA of each individual service if they are logical and . In case of logical OR composite SLA = 100- ( MULTIPLY INDIVIDUAL Unavailablity of SLAs ) 
+- Service Lifecycle - development phase->public preview phase ->general availability (GA)
+
+1. Basic - Free ,gives 10 GB storage 
+2. Developer - technical support by email on Business Hours , Response time (8hrs),General guidance for Architecture  
+3. Standard - 24/7 access to technical support by email and phone, Quicker Response Time 
+4.Professional Direct - support API ,Training, Proactive Guidance, Service reviews and advisory consultation

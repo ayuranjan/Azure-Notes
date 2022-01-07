@@ -1,0 +1,56 @@
+
+- Azure Site Recovery provides fault tolerance . 
+- PaaS is designed to support the complete web application lifecycle: building, testing, deploying, managing, and updating.
+- OpEx is ongoing costs (costs of operations) such as staf salaries  , leasing software.
+- Azure backup is paas 
+- azure subscription can have only 1 account administrator 
+- Azure automatically routes traffic between subnets in a virtual network. Therefore, all virtual machines in a virtual network can connect to the other virtual machines in the same virtual network. Even if the virtual machines are on separate subnets within the virtual network, they can still communicate with each other.
+- A resource can interact with resources in other resource groups.
+- A Local Network Gateway is an object in Azure that represents your on-premise VPN device
+-An Azure AD tenant can have multiple subscriptions but an Azure subscription can only be associated with one Azure AD tenant.We can change the Azure AD tenant of a azure subscription .
+- if your subscription expires, you lose access to all the other resources associated with the subscription. However, the Azure AD directory remains in Azure.
+- You can move a VM and its associated resources to a different subscription by using the Azure portal.
+- You can request a quota limit increase by opening a support request
+- Not all Azure regions support availability zones.
+-  Azure file shares can be seamlessly used in Windows and Windows Server.
+- data in archeive has to be rehydrated before it can be used 
+- There are different replication options available with a storage account. The ‘minimum’ replication option is Locally Redundant Storage (LRS). With LRS, data is replicated synchronously three times within the primary region .This is automatic and in same data centre . 
+- You can use Azure Resource Manager templates to automate the creation of the Azure resources. Deploying resource through templates is known as ‘Infrastructure as code’.
+- DevTest Labs creates labs consisting of pre-configured bases or Azure Resource Manager templates. 
+- Azure Monitor  can monitor both on premise and cloud computers 
+- In the Azure virtual machines page in the Azure portal, there is a named Maintenance Status. This column will display service issues that could affect your virtual machine.
+- On the Help and Support blade, there is a Service Health option. If you click Service Health, a new blade opens. The Service Health blade contains the Planned Maintenance link which opens a blade where you can view a list of planned maintenance events that can affect the availability of an Azure subscription.
+-Azure Apllication Insight monitors web application  
+- ere are just a few workloads you can automate with logic apps:
+	- Process and route orders across on-premises systems and cloud services.
+	- Send email notifications with Office 365 when events happen in various systems, apps, and services. Move uploaded files from an SFTP or FTP server to Azure Storage.
+	- Monitor tweets for a specific subject, analyze the sentiment, and create alerts or tasks for items that need review.
+- There are two storage services IoT Hub can route messages to -- Azure Blob Storage and Azure Data Lake Storage Gen2 (ADLS Gen2) accounts
+- Azure Advisor does not provide recommendations on how to improve the security of an Azure AD environment.
+- To ensure that a virtual machine named VM1 is accessible from the Internet over HTTP, you need to modify a network security group or Azure Firewall.
+- Azure Security Centre can monitor azure resources and on premises resources .
+-You can associate zero, or one, network security group to each virtual network subnet and network interface in a virtual machine NOT VIRTUAL NETWORK . 
+- Azure AD authenticates users and provides access tokens. An access token is a security token that is issued by an authorization server. It contains information about the user and the app for which the token is intended, which can be used to access Web APIs and other protected resources.
+- You can send Azure AD activity logs to Azure Monitor logs to enable rich visualizations, monitoring and alerting on the connected data.
+- Azure AD join only applies to Windows 10 device
+- You can use Azure Blueprint to grant permission to a resource . asign blueprint to resource group  .
+-  Security Center lets you track and manage compliance and governance over time.
+-minimum uptime for all Azure services is 99.9 percent.
+-Inbound data traffic is free but outbound data traffic is not.Data traffic b/w azure services within same region is always free 
+-An Azure free account comes with a ‘basic’ support plan.You can purchase the Professional Direct, Standard, and Developer support plans with the Microsoft Customer Agreement. You can also purchase the Professional and Standard support plans with the Enterprise Agreement.
+- Microsoft will provide a minimum of 12 months' notification prior to ending support if no successor product or service is offered
+- A subscription owner can manage all resources and permissions within the subscription but cannot transfer ownership of the subscription.You need to be an administrator of the billing account that has the subscription to be able to transfer the subscription.
+-You can remove the spending limit, but you can’t increase or decrease it.
+-You are charged for public IP addresses. Therefore, deleting unused public IP addresses will reduce the Azure costs.
+-Monthly Uptime % = (Maximum Available Minutes-Downtime) / Maximum Available Minutes x 100.
+- you can't open support request in basic plan .
+-The Standard, Professional Direct, and Premier support plans have technical support for engineers via email and phone.
+-Services in private or public preview are usually offered at reduced costs. However, the costs increase, not decrease when the services are released to general availability.
+-Azure Defender for Identity tells you if your user credentials are compromised by brute force .It tell you about malicious insider action at your organisation .
+-Azure Devops - saas 
+Azure Advisor does however, generate a list of virtual that ARE NOT protected by Azure Backup. You can view a list of virtual machines that are protected by Azure Backup by viewing the Protected Items in the Azure Recovery Services Vault.
+-To monitor threats by using sensors, you would use Azure Advanced Threat Protection (ATP).
+- Security Center lets you track and manage compliance and governance over time. 
+-Budget alerts notify you when spending, based on usage or cost, reaches or exceeds the amount defined in the alert condition of the budget. Cost Management budgets are created using the Azure portal or the Azure Consumption API.
+- No SLA is provided for the Free tier of Azure Active Directory.
+-Azure Free Account gives you 12 months access to the most popular free services. It also gives you a credit (150 GBP or 200 USD) to use on any Azure service for up to 30 days.
